@@ -1118,9 +1118,10 @@ with tab_overview:
             unsafe_allow_html=True
         )
     with c2:
+        estimate_arrow = "↓" if value_gap > 0 else "↑" if value_gap < 0 else "→"
         st.markdown(
             f'<div class="value-card"><div class="value-label">WorthXI estimate</div>'
-            f'<div class="value-number">{money(predicted_value)}</div>'
+            f'<div class="value-number">{estimate_arrow} {money(predicted_value)}</div>'
             f'<div class="value-sub">Linear Regression estimate</div></div>',
             unsafe_allow_html=True
         )
